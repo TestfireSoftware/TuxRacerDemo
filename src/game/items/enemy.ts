@@ -28,6 +28,8 @@ export class Enemy extends Item {
   private movementPattern: MovementPattern;
   private speed: number;
   private time: number = 0;
+  private animationTime: number = 0;
+  private baseHeight: number;
 
   // Patrolling state
   private patrolStart: Vector3;
