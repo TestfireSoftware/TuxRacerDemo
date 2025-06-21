@@ -51,6 +51,13 @@ export namespace ItemsLoader {
   function mapToItem(itemDto: ItemDto): Item {
     const type = mapToType(itemDto.type);
     const position = computeItemPosition(itemDto);
+    
+    // Check if this is an enemy type
+    if (itemDto.type.startsWith("ENEMY_")) {
+      const enemyConfig = createEnemyConfig(itemDto, position);
+      return new Enemy(type, position, itemDto.height, itemDto.diameter, enemyConfig);
+    }
+    
     return new Item(type, position, itemDto.height, itemDto.diameter);
   }
 
