@@ -115,6 +115,32 @@ export class Enemy extends Item {
         this.movingToEnd = !this.movingToEnd;
       }
     }
+
+    // Add animation effects
+    this.updateAnimation(timeStep);
+  }
+
+  private updateAnimation(timeStep: number): void {
+    this.animationTime += timeStep;
+
+    // Add bobbing effect for moving enemies
+    const velocityMagnitude = Vectors.computeLength(this.velocity);
+    if (velocityMagnitude > 0.1) {
+      // Bobbing frequency based on speed
+      const bobbingFrequency = 2 + velocityMagnitude * 0.3;
+      const bobbingAmplitude = 0.1;
+      
+      // Update height with bobbing
+      const bobbing = Math.sin(this.animationTime * bobbingFrequency) * bobbingAmplitude;
+      this.height = this.baseHeight + bobbing;
+    }
+
+    // Scale animation for yeti when following
+    if (this.movementPattern === MovementPattern.FOLLOWING && this.isFollowing) {
+      // Pulsing effect when chasing
+      const pulseScale = 1 + Math.sin(this.animationTime * 4) * 0.05;
+      this.diameter = this.diameter * pulseScale;
+    }
   }
 
   private updatePatrolling(timeStep: number): void {
