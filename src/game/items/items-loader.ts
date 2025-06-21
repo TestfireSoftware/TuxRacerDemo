@@ -82,4 +82,67 @@ export namespace ItemsLoader {
     }
     return type;
   }
+
+  function createEnemyConfig(itemDto: ItemDto, position: Vector3): EnemyConfig {
+    const config: EnemyConfig = {
+      movementPattern: getMovementPattern(itemDto),
+      speed: itemDto.speed || 5,
+    };
+
+    // Configure patrolling
+    if (config.movementPattern === MovementPattern.PATROLLING) {
+      if (itemDto.patrolEndX !== undefined && itemDto.patrolEndZ !== undefined) {
+        const endPosition = computeItemPosition({
+          ...itemDto,
+          x: itemDto.patrolEndX,
+          z: itemDto.patrolEndZ,
+        });
+        config.patrolStart = position;
+        config.patrolEnd = endPosition;
+      }
+    }
+
+    // Configure circular movement
+    if (config.movementPattern === MovementPattern.CIRCULAR) {
+      config.centerPoint = position;
+      config.radius = itemDto.radius || 5;
+      config.angularSpeed = itemDto.angularSpeed || 1;
+    }
+
+    // Configure following
+    if (config.movementPattern === MovementPattern.FOLLOWING) {
+      config.detectionRadius = itemDto.detectionRadius || 15;
+      config.returnSpeed = (itemDto.speed || 5) * 0.5;
+    }
+
+    return config;
+  }
+
+  function getMovementPattern(itemDto: ItemDto): MovementPattern {
+    if (itemDto.movementPattern) {
+      switch (itemDto.movementPattern) {
+        case "patrolling":
+          return MovementPattern.PATROLLING;
+        case "circular":
+          return MovementPattern.CIRCULAR;
+        case "following":
+          return MovementPattern.FOLLOWING;
+        default:
+          console.warn(`Unknown movement pattern: ${itemDto.movementPattern}, defaulting to patrolling`);
+          return MovementPattern.PATROLLING;
+      }
+    }
+
+    // Default patterns based on enemy type
+    switch (itemDto.type) {
+      case "ENEMY_PENGUIN":
+        return MovementPattern.PATROLLING;
+      case "ENEMY_SNOWMAN":
+        return MovementPattern.CIRCULAR;
+      case "ENEMY_YETI":
+        return MovementPattern.FOLLOWING;
+      default:
+        return MovementPattern.PATROLLING;
+    }
+  }
 }
