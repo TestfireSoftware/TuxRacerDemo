@@ -153,6 +153,7 @@ export class RacingScene {
 
       case GameState.BREAKING:
         GameContext.player.update(timeStep);
+        GameContext.items.update(timeStep);
         this.updateTerrainSound();
         this.trackMarks.update();
         this.camera.incrementCameraDistance(timeStep);
