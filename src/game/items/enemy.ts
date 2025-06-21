@@ -58,6 +58,7 @@ export class Enemy extends Item {
     
     this.movementPattern = config.movementPattern;
     this.speed = config.speed;
+    this.baseHeight = height;
 
     // Initialize patrolling
     this.patrolStart = config.patrolStart || [...position] as Vector3;
