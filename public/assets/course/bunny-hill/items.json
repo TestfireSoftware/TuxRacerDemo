@@ -2,26 +2,33 @@
   "items": [
     {
       "type": "START",
-      "x": 50,
-      "z": 5,
-      "height": 0.5,
-      "diameter": 10
+      "x": 44,
+      "z": 255,
+      "height": 6,
+      "diameter": 9
     },
     {
       "type": "ENEMY_PENGUIN",
       "x": 45,
-      "z": 20,
+      "z": 200,
       "height": 1.5,
       "diameter": 1.2,
       "movementPattern": "patrolling",
       "speed": 4,
       "patrolEndX": 55,
-      "patrolEndZ": 20
+      "patrolEndZ": 200
+    },
+    {
+      "type": "HERRING",
+      "x": 50,
+      "z": 180,
+      "height": 1,
+      "diameter": 1
     },
     {
       "type": "ENEMY_SNOWMAN",
       "x": 50,
-      "z": 40,
+      "z": 150,
       "height": 2,
       "diameter": 1.5,
       "movementPattern": "circular",
@@ -30,9 +37,37 @@
       "angularSpeed": 0.5
     },
     {
+      "type": "TREE",
+      "x": 40,
+      "z": 120,
+      "height": 5,
+      "diameter": 4
+    },
+    {
+      "type": "TREE",
+      "x": 60,
+      "z": 120,
+      "height": 5,
+      "diameter": 4
+    },
+    {
+      "type": "HERRING",
+      "x": 48,
+      "z": 100,
+      "height": 1,
+      "diameter": 1
+    },
+    {
+      "type": "HERRING",
+      "x": 52,
+      "z": 100,
+      "height": 1,
+      "diameter": 1
+    },
+    {
       "type": "ENEMY_YETI",
       "x": 50,
-      "z": 60,
+      "z": 80,
       "height": 2.5,
       "diameter": 2,
       "movementPattern": "following",
@@ -40,46 +75,18 @@
       "detectionRadius": 20
     },
     {
-      "type": "TREE",
-      "x": 40,
-      "z": 30,
-      "height": 5,
-      "diameter": 4
-    },
-    {
-      "type": "TREE",
-      "x": 60,
-      "z": 30,
-      "height": 5,
-      "diameter": 4
-    },
-    {
       "type": "HERRING",
-      "x": 50,
-      "z": 25,
-      "height": 1,
-      "diameter": 1
-    },
-    {
-      "type": "HERRING",
-      "x": 48,
-      "z": 35,
-      "height": 1,
-      "diameter": 1
-    },
-    {
-      "type": "HERRING",
-      "x": 52,
-      "z": 35,
+      "x": 45,
+      "z": 60,
       "height": 1,
       "diameter": 1
     },
     {
       "type": "FINISH",
-      "x": 50,
-      "z": 100,
-      "height": 0.5,
-      "diameter": 10
+      "x": 45,
+      "z": 26,
+      "height": 6,
+      "diameter": 9
     }
   ]
 }
