@@ -8,22 +8,68 @@
       "diameter": 9
     },
     {
+      "type": "TREE",
+      "x": 35,
+      "z": 240,
+      "height": 4,
+      "diameter": 3.5
+    },
+    {
+      "type": "TREE",
+      "x": 55,
+      "z": 235,
+      "height": 5,
+      "diameter": 4
+    },
+    {
       "type": "ENEMY_PENGUIN",
       "x": 45,
-      "z": 200,
+      "z": 220,
       "height": 1.5,
       "diameter": 1.2,
       "movementPattern": "patrolling",
       "speed": 4,
       "patrolEndX": 55,
-      "patrolEndZ": 200
+      "patrolEndZ": 220
+    },
+    {
+      "type": "HERRING",
+      "x": 42,
+      "z": 200,
+      "height": 1,
+      "diameter": 1
     },
     {
       "type": "HERRING",
       "x": 50,
-      "z": 180,
+      "z": 200,
       "height": 1,
       "diameter": 1
+    },
+    {
+      "type": "HERRING",
+      "x": 58,
+      "z": 200,
+      "height": 1,
+      "diameter": 1
+    },
+    {
+      "type": "TREE_BARREN",
+      "x": 38,
+      "z": 180,
+      "height": 6,
+      "diameter": 5
+    },
+    {
+      "type": "ENEMY_PENGUIN",
+      "x": 52,
+      "z": 170,
+      "height": 1.5,
+      "diameter": 1.2,
+      "movementPattern": "patrolling",
+      "speed": 5,
+      "patrolEndX": 40,
+      "patrolEndZ": 170
     },
     {
       "type": "ENEMY_SNOWMAN",
@@ -39,30 +85,55 @@
     {
       "type": "TREE",
       "x": 40,
-      "z": 120,
+      "z": 130,
       "height": 5,
       "diameter": 4
     },
     {
       "type": "TREE",
       "x": 60,
-      "z": 120,
+      "z": 130,
       "height": 5,
       "diameter": 4
     },
     {
       "type": "HERRING",
-      "x": 48,
-      "z": 100,
+      "x": 45,
+      "z": 120,
       "height": 1,
       "diameter": 1
     },
     {
       "type": "HERRING",
-      "x": 52,
-      "z": 100,
+      "x": 50,
+      "z": 120,
       "height": 1,
       "diameter": 1
+    },
+    {
+      "type": "HERRING",
+      "x": 55,
+      "z": 120,
+      "height": 1,
+      "diameter": 1
+    },
+    {
+      "type": "ENEMY_SNOWMAN",
+      "x": 45,
+      "z": 100,
+      "height": 1.8,
+      "diameter": 1.4,
+      "movementPattern": "circular",
+      "speed": 4,
+      "radius": 5,
+      "angularSpeed": -0.7
+    },
+    {
+      "type": "TREE",
+      "x": 35,
+      "z": 90,
+      "height": 4.5,
+      "diameter": 3.8
     },
     {
       "type": "ENEMY_YETI",
@@ -75,11 +146,49 @@
       "detectionRadius": 20
     },
     {
+      "type": "TREE",
+      "x": 58,
+      "z": 70,
+      "height": 5.5,
+      "diameter": 4.5
+    },
+    {
       "type": "HERRING",
-      "x": 45,
+      "x": 44,
       "z": 60,
       "height": 1,
       "diameter": 1
+    },
+    {
+      "type": "HERRING",
+      "x": 48,
+      "z": 60,
+      "height": 1,
+      "diameter": 1
+    },
+    {
+      "type": "HERRING",
+      "x": 52,
+      "z": 60,
+      "height": 1,
+      "diameter": 1
+    },
+    {
+      "type": "ENEMY_YETI",
+      "x": 42,
+      "z": 50,
+      "height": 2.2,
+      "diameter": 1.8,
+      "movementPattern": "following",
+      "speed": 5,
+      "detectionRadius": 15
+    },
+    {
+      "type": "TREE_BARREN",
+      "x": 55,
+      "z": 40,
+      "height": 7,
+      "diameter": 6
     },
     {
       "type": "FINISH",
