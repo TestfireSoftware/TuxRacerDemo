@@ -16,6 +16,14 @@ export namespace ItemsLoader {
     z: number;
     height: number;
     diameter: number;
+    // Enemy-specific properties
+    movementPattern?: string;
+    speed?: number;
+    patrolEndX?: number;
+    patrolEndZ?: number;
+    radius?: number;
+    angularSpeed?: number;
+    detectionRadius?: number;
   };
 
   export async function load(): Promise<Items> {
