@@ -30,8 +30,6 @@ precision mediump float;
 
 in float v_FogFactor;
 
-uniform vec3 u_FogColor;
-
 out vec4 outColor;
 
 void main() {
