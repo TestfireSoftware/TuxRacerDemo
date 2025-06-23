@@ -48,6 +48,12 @@ export class Enemy extends Item {
   private returnSpeed: number;
   private isFollowing: boolean = false;
 
+  // Snowball throwing (for snowman enemies)
+  public snowballs: Snowball[] = [];
+  private throwCooldown: number = 0;
+  private throwCooldownTime: number = 2; // Throw every 2 seconds
+  private throwRange: number = 25; // Range to start throwing
+
   constructor(
     type: ItemType,
     position: Vector3,
