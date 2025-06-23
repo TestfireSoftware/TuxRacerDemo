@@ -45,10 +45,12 @@ export class ItemRenderer {
 
   private readonly dynamicRenderer: DynamicItemRenderer;
   private readonly staticRenderer: StaticItemRenderer;
+  private readonly snowballRenderer: SnowballRenderer;
 
   constructor() {
     this.dynamicRenderer = new DynamicItemRenderer();
     this.staticRenderer = new StaticItemRenderer();
+    this.snowballRenderer = new SnowballRenderer();
   }
 
   public async init(items: Map<ItemType, Item[]>): Promise<void> {
