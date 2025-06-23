@@ -2,6 +2,7 @@ import { Item } from "./item.ts";
 import { ItemType } from "./item-types.ts";
 import { Vector3, Vectors } from "../../math/vectors.ts";
 import { GameContext } from "../game-context.ts";
+import { Snowball } from "./snowball.ts";
 
 export enum MovementPattern {
   PATROLLING = "patrolling",
