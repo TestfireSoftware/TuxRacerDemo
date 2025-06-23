@@ -45,12 +45,6 @@ void main() {
 }
 `;
 
-  private static readonly SHADER_LIGHT_SETTINGS: ShaderLightSettings = {
-    useMaterial: false,
-    useStaticNormal: false,
-    useNormalMatrix: false,
-  };
-
   private shader: WebGLProgram;
   private modelViewMatrixUniformLocation: WebGLUniformLocation;
   private projectionMatrixUniformLocation: WebGLUniformLocation;
