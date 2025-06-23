@@ -4,6 +4,8 @@ import { Item } from "./item.ts";
 import { Textures } from "../../gl/textures.ts";
 import { DynamicItemRenderer } from "./dynamic-item-renderer.ts";
 import { StaticItemRenderer } from "./static-item-renderer.ts";
+import { SnowballRenderer } from "./snowball-renderer.ts";
+import { Snowball } from "./snowball.ts";
 
 export class ItemRenderer {
   public static readonly FLAT_POSITIONS = [
