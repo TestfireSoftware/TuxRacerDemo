@@ -222,4 +222,59 @@ export class Enemy extends Item {
       );
     }
   }
+
+  private updateSnowballThrowing(timeStep: number): void {
+    // Update cooldown
+    if (this.throwCooldown > 0) {
+      this.throwCooldown -= timeStep;
+    }
+
+    // Update existing snowballs
+    this.snowballs = this.snowballs.filter(snowball => {
+      snowball.update(timeStep);
+      
+      // Check collision with player
+      if (snowball.checkPlayerCollision()) {
+        // Slow down the player when hit
+        const knockback = 0.7; // Reduce speed to 70%
+        GameContext.player.velocity = Vectors.multiply(
+          knockback,
+          GameContext.player.velocity
+        );
+        GameContext.soundPlayer.playSound(GameContext.soundPlayer.sounds.TREE_HIT);
+        return false; // Remove snowball
+      }
+      
+      return snowball.active;
+    });
+
+    // Check if should throw new snowball
+    const playerPos = GameContext.player.position;
+    const toPlayer = Vectors.subtract(playerPos, this.position);
+    const distanceToPlayer = Vectors.computeLength(toPlayer);
+
+    if (
+      distanceToPlayer < this.throwRange &&
+      this.throwCooldown <= 0 &&
+      !GameContext.player.isAirborne &&
+      this.snowballs.length < 3 // Max 3 snowballs at once
+    ) {
+      // Throw a snowball
+      const throwPosition: Vector3 = [
+        this.position[0],
+        this.position[1] + this.height * 0.8, // Throw from upper part of snowman
+        this.position[2]
+      ];
+      
+      // Lead the target based on player velocity
+      const leadTime = distanceToPlayer / 15; // Snowball speed
+      const predictedPos = Vectors.add(
+        playerPos,
+        Vectors.multiply(leadTime, GameContext.player.velocity)
+      );
+      
+      this.snowballs.push(new Snowball(throwPosition, predictedPos));
+      this.throwCooldown = this.throwCooldownTime;
+    }
+  }
 }
