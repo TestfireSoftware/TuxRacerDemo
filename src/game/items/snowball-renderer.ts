@@ -75,7 +75,7 @@ void main() {
     );
 
     // Create sphere geometry for snowball
-    const { positions, indices } = this.createSphereGeometry(0.3, 8, 6);
+    const { positions, indices } = this.createSphereGeometry(1.0, 8, 6);
     this.numIndices = indices.length;
 
     this.vertexArray = GlUtil.createAndBindVertexArray(gl);
