@@ -2,7 +2,6 @@ import { GlContext } from "../../gl/gl-context.ts";
 import { GlUtil } from "../../gl/gl-util.ts";
 import { Snowball } from "./snowball.ts";
 import { Matrices } from "../../math/matrices.ts";
-import { ShaderFactory, ShaderLightSettings } from "../shader-factory.ts";
 import { Shaders } from "../../gl/shaders.ts";
 import { Settings } from "../../settings.ts";
 
