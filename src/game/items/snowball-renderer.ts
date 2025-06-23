@@ -60,10 +60,10 @@ void main() {
   public async init(): Promise<void> {
     const gl = GlContext.gl;
 
-    this.shader = ShaderFactory.createShader(
+    // Create shader directly without ShaderFactory
+    this.shader = Shaders.loadFromString(
       SnowballRenderer.VERTEX_SHADER,
       SnowballRenderer.FRAGMENT_SHADER,
-      SnowballRenderer.SHADER_LIGHT_SETTINGS,
       gl,
     );
 
