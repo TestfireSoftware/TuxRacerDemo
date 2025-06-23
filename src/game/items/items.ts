@@ -47,7 +47,17 @@ export class Items {
   }
 
   public draw(): void {
-    this.renderer.draw();
+    // Collect all snowballs from enemies
+    const snowballs: Snowball[] = [];
+    this.items.forEach((itemList) => {
+      itemList.forEach(item => {
+        if (item instanceof Enemy && item.snowballs) {
+          snowballs.push(...item.snowballs);
+        }
+      });
+    });
+    
+    this.renderer.draw(snowballs);
   }
 
   public update(timeStep: number): void {
