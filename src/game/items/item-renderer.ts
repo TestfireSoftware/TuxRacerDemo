@@ -61,6 +61,8 @@ export class ItemRenderer {
 
     const staticItems = this.filterStaticItems(items);
     await this.staticRenderer.init(textures, staticItems);
+    
+    await this.snowballRenderer.init();
   }
 
   public draw(): void {
