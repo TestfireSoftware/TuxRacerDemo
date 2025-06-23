@@ -14,33 +14,34 @@ in vec4 a_Position;
 uniform mat4 u_ModelViewMatrix;
 uniform mat4 u_ProjectionMatrix;
 
-$$lighting-function$$
-
-out vec3 v_LightColor;
 out float v_FogFactor;
 
 void main() {
   vec4 eyePosition = u_ModelViewMatrix * a_Position;
   gl_Position = u_ProjectionMatrix * eyePosition;
   
-  v_LightColor = vec3(1.0); // Snowballs are white
-  v_FogFactor = computeFogFactor(eyePosition);
+  // Simple fog calculation
+  float distance = length(eyePosition.xyz);
+  v_FogFactor = clamp((distance - 40.0) / 35.0, 0.0, 1.0);
 }
 `;
 
   private static readonly FRAGMENT_SHADER = `#version 300 es
 precision mediump float;
 
-in vec3 v_LightColor;
 in float v_FogFactor;
+
+uniform vec3 u_FogColor;
 
 out vec4 outColor;
 
-$$lighting-function$$
-
 void main() {
-  vec4 snowballColor = vec4(0.95, 0.95, 1.0, 1.0); // Slightly blue-white
-  outColor = computeFinalColor(snowballColor);
+  vec3 snowballColor = vec3(0.95, 0.95, 1.0); // Slightly blue-white
+  vec3 fogColor = vec3(0.5, 0.6, 0.8); // Default fog color
+  
+  // Mix with fog
+  vec3 finalColor = mix(snowballColor, fogColor, v_FogFactor);
+  outColor = vec4(finalColor, 1.0);
 }
 `;
 
