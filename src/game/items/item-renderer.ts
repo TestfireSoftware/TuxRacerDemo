@@ -65,7 +65,7 @@ export class ItemRenderer {
     await this.snowballRenderer.init();
   }
 
-  public draw(): void {
+  public draw(snowballs: Snowball[] = []): void {
     const gl = GlContext.gl;
 
     gl.disable(gl.CULL_FACE);
@@ -77,6 +77,7 @@ export class ItemRenderer {
 
     this.staticRenderer.draw(gl);
     this.dynamicRenderer.draw(gl);
+    this.snowballRenderer.draw(snowballs, gl);
   }
 
   private filterDynamicItems(
