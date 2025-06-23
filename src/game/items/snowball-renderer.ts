@@ -106,6 +106,11 @@ void main() {
       GlContext.modelViewMatrix.multiply(
         Matrices.createTranslation(...snowball.position),
       );
+      
+      // Scale to match snowball radius
+      GlContext.modelViewMatrix.multiply(
+        Matrices.createScaling(snowball.radius, snowball.radius, snowball.radius),
+      );
 
       gl.uniformMatrix4fv(
         this.modelViewMatrixUniformLocation,
