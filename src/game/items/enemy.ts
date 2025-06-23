@@ -125,6 +125,11 @@ export class Enemy extends Item {
 
     // Add animation effects
     this.updateAnimation(timeStep);
+    
+    // Update snowball throwing for snowman enemies
+    if (this.type.texture === "enemy_snowman.webp") {
+      this.updateSnowballThrowing(timeStep);
+    }
   }
 
   private updateAnimation(timeStep: number): void {
