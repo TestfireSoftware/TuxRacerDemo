@@ -1,4 +1,6 @@
 import { Item } from "./item.ts";
+import { Enemy } from "./enemy.ts";
+import { Snowball } from "./snowball.ts";
 import { ItemType } from "./item-types.ts";
 import { ItemRenderer } from "./item-renderer.ts";
 import { Vector3 } from "../../math/vectors.ts";
