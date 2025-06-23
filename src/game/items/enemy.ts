@@ -241,7 +241,7 @@ export class Enemy extends Item {
           knockback,
           GameContext.player.velocity
         );
-        GameContext.soundPlayer.playSound(GameContext.soundPlayer.sounds.TREE_HIT);
+        GameContext.soundPlayer.playSound(Sound.TREE_HIT);
         return false; // Remove snowball
       }
       
