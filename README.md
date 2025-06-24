@@ -1,5 +1,11 @@
 # TuxRacer.js
 
+A Demo of using [AlchemyLab](https://alchemylab.testfiresoftware.com/) to introduce enemies in Tux Racer.
+[See video](https://www.youtube.com/watch?v=p8D4J5dnvac)
+This is a raw output of the output from AlchemyLab. No further modifications (except adding sprite images for enemies)
+
+Below follows the original README
+
 You can play Tux Racer directly in your browser here: [Play TuxRacer.JS](https://0x00eb.itch.io/tux-racer)
 
 ![TuxRacer.JS Screenshot](screenshot.webp)
